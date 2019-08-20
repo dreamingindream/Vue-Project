@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <div>Hello, world!</div>
-    <div>git add, commit and push from my MBP.</div>
-    <div>add SSH for github.</div>
+
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <div id="app2">
+        <span v-bind:title="message">Hold ur mouse here.</span>
+    </div>
+
+    <div id="app3">
+        <span v-if="seen">Can u see me ?</span>
+    </div>
+
+    <div id="app4">
+        <ul v-for="todo in Todos">
+            <li>{{ todo.text }}</li>
+        </ul>
+    </div>
+
+    <div id="app5">
+        <p>{{ msg }}</p>
+        <button v-on:click="reverseMsg">reverse this message</button>
+    </div>
+
+    <div id="app6">
+        <p>{{ msg }}</p>
+        <input v-model="msg">
+    </div>
+
+    <div id="app7">
+        <ol>
+            <todo-item
+                v-for="item in todoItems"
+                v-bind:todo="item"
+                v-bind:key="item.id"
+            ></todo-item>
+        </ol>
+    </div>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./src/main.js"></script>
+
 </html>
