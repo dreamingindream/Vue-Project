@@ -18,5 +18,5 @@ it is now in command-mode, press 'i' to come to insert-mode.
 
 when u finish editing, press 'ESC' to quit insert-mode and go back to command-mode
 
-and then, press ':' to come to viewmode, press '!wq' to save and quit.
+and then, press ':' to come to viewmode, press 'wq' to save and quit.
 
