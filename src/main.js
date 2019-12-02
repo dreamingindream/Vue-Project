@@ -54,15 +54,16 @@ let app6 = new Vue({
     }
 });
 
-Vue.component("todo-item", {
-    props: ["todo"],
-    template: "<li> {{todo.text}} </li>"
+Vue.component("conponent-name", {
+    // 注意这里 props 的写法，在 JS 里 props 中写驼峰，HLML 里写 -小写
+    props: ["todoXXX"],
+    template: "<li> {{todoXXX.text}} </li>"
 });
 
 let app7 = new Vue({
     el: "#app7",
     data: {
-        todoItems: [
+        todoItemsXXX: [
             {id: 0, text: "first thing to do."},
             {id: 1, text: "another thing to do."},
             {id: 2, text: "much things to do."},
