@@ -43,10 +43,10 @@
 
     <div id="app7">
         <ol>
-            <!-- 自学文档遇到的第一个坑，同样通过文档找到答案：
-                 注意这里 Prop 的写法，在 JS 里 Prop 中写驼峰，HLML 里写 -小写
-                 同时因为 Vue 这样的处理方式，使得 JS 里这种对 Prop 的命名不能用 - 
-                 v-for 不受 HTML 大小写不敏感的影响，因为是在 JS 里执行的 -->
+            <!-- 自学文档遇到的第一个坑，同样通过文档找到答案： -->
+            <!-- 注意这里 Prop 的写法，在 JS 里 Prop 中写驼峰，HLML 里写 -小写 -->
+            <!-- 同时因为 Vue 这样的处理方式，使得 JS 里这种对 Prop 的命名不能用 -  -->
+            <!-- v-for 不受 HTML 大小写不敏感的影响，因为是在 JS 里执行的 -->
             <conponent-name v-for="xxx in todoItemsXXX" v-bind:todo-x-x-x="xxx" v-bind:key="xxx.id"></conponent-name>
         </ol>
     </div>

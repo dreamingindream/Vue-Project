@@ -42,7 +42,7 @@ let app5 = new Vue({
     },
     methods: {
         reverseMsg: function () { // can not use ES 6 arrow fn --- ()=> here
-            this.msg = this.msg.split("").reverse().join("")
+            this.msg = this.msg.split("").reverse().join("");
         }
     }
 });
@@ -67,7 +67,7 @@ let app7 = new Vue({
             {id: 0, text: "first thing to do."},
             {id: 1, text: "another thing to do."},
             {id: 2, text: "much things to do."},
-            {id: 4, text: "I am tired."},
+            {id: 4, text: "I am tired."}
         ]
     }
 });
