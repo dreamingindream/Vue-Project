@@ -23,14 +23,14 @@ let app4 = new Vue({
     el: "#app4",
     data: {
         Todos: [{
-                text: "learn Vue Doc."
-            },
-            {
-                text: "write demos self."
-            },
-            {
-                text: "wtite blogs for leaning processing."
-            }
+            text: "learn Vue Doc."
+        },
+        {
+            text: "write demos self."
+        },
+        {
+            text: "wtite blogs for leaning processing."
+        }
         ]
     }
 });
@@ -59,15 +59,58 @@ Vue.component("conponent-name", {
     props: ["todoXXX"],
     template: "<li> {{todoXXX.text}} </li>"
 });
-
 let app7 = new Vue({
     el: "#app7",
     data: {
         todoItemsXXX: [
-            {id: 0, text: "first thing to do."},
-            {id: 1, text: "another thing to do."},
-            {id: 2, text: "much things to do."},
-            {id: 4, text: "I am tired."}
+            { id: 0, text: "first thing to do." },
+            { id: 1, text: "another thing to do." },
+            { id: 2, text: "much things to do." },
+            { id: 4, text: "I am tired." }
         ]
     }
 });
+
+Vue.component("todo-item", {
+    props: ['title'],
+    template: '\
+        <li>\
+        {{ title }}\
+        <button v-on:click="$emit(\'remove\')">Remove</button>\
+        </li>\
+    '
+});
+let todoListVue = new Vue({
+    el: "#todo-list-demo",
+    data: {
+        newTodoText: '',
+        XXX: [
+            {
+                id: 1,
+                title: 'Do the dishes',
+            },
+            {
+                id: 2,
+                title: 'Take out the trash',
+            },
+            {
+                id: 3,
+                title: 'Mow the lawn'
+            }
+        ],
+        nextTodoId: 4
+    },
+    methods: {
+        addNewTodo: function () {
+            this.XXX.push({
+                id: this.nextTodoId++,
+                title: this.newTodoText
+            })
+            this.newTodoText = ''
+        }/*,
+        removeTodoItem: function () {
+            debugger;
+            this.XXX.splice(index, 1)
+        }*/
+    }
+})
