@@ -107,10 +107,9 @@ let todoListVue = new Vue({
                 title: this.newTodoText
             })
             this.newTodoText = ''
-        }/*,
-        removeTodoItem: function () {
-            debugger;
+        },
+        removeTodoItem: function (index) {
             this.XXX.splice(index, 1)
-        }*/
+        }
     }
 })

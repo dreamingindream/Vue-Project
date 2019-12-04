@@ -53,7 +53,7 @@
 
     <h1>This is a Todo-List Demo:&nbsp;</h1>
     <div id="todo-list-demo">
-        <form action="">
+        <form v-on:submit.prevent="addNewTodo">
             <!-- 把 input 写到 label 里面，可以不用写 label 的 for 和 input 的 id -->
             <label for="">add a new todo:
                 <input v-model="newTodoText"
@@ -64,16 +64,13 @@
             <button>Add</button>
         </form>
         <ul>
-            <li>feed Sanduo.</li>
             <li
                 is="todo-item"
-                v-for="xxx in XXX"
+                v-for="(xxx, index) in XXX"
                 v-bind:key="xxx.id"
                 v-bind:title="xxx.title"
-                v-on:remove="XXX.splice(index, 1)"
+                v-on:remove="removeTodoItem(index)"
             ></li>
-            <!-- todo remove 这里遇到一个报错 -->
-            <!-- todo remove 的方法写到 method 里面，怎么获取 index ？ -->
         </ul>
     </div>
 
