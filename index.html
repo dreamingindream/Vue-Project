@@ -113,6 +113,20 @@
         <span>Selected: {{ selectedValue }}</span>
     </div>
 
+    <!-- 写一个多选的下拉列表并绑定 mdoel -->
+    <div id="model-demo-multiple-select">
+        <select name="selectName" id="selectId" multiple v-model="selectedValue">
+            <option value="noValue" disabled>Please Chose One:</option>
+            <option value="valueForA">A</option>
+            <!-- 不写 value 属性，就取默认的文本 -->
+            <!-- 初始化默认选中，取自 data 中给 model 定义的默认值 -->
+            <option >B</option>
+            <option >C</option>
+            <option >666</option>
+        </select>
+        <span>Selected: {{ selectedValue }}</span>
+    </div>
+
 </body>
 <script src="./src/main.js"></script>
 

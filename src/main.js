@@ -140,9 +140,9 @@ let modelDemoRadio = new Vue({
     }
 });
 
-let modelDemoSingleSelect = new Vue({
-    el: "#model-demo-single-select",
+let modelDemoMultipleSelect = new Vue({
+    el: "#model-demo-multiple-select",
     data: {
-        selectedValue: "666"
+        selectedValue: ["666"]
     }
 });
