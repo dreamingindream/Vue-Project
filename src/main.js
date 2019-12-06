@@ -164,12 +164,12 @@ let componentDemo = new Vue({
 });
 
 Vue.component("news-list", {
-    props: ["news"],
+    props: ["x"],
     template: `
         <div>
-            <h3>{{ news.title }}</h3>
-            <p>{{ news.content }}</p>
-            <p>{{ news.bottom }}</p>
+            <h3>{{ x.title }}</h3>
+            <p>{{ x.content }}</p>
+            <p>{{ x.bottom }}</p>
         </div>
     `
 });
