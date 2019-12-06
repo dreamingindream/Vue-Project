@@ -146,3 +146,19 @@ let modelDemoMultipleSelect = new Vue({
         selectedValue: ["666"]
     }
 });
+
+Vue.component("button-click-count", {
+    // 一个组件的 data 选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝
+    data: function () {
+        return {
+            count: 0
+        }
+    },
+    template: '<button @click="count++">u click me {{ count }} times</button>'
+});
+let componentDemo = new Vue({
+    el: "#component-demo",
+    data: {
+        
+    }
+});
