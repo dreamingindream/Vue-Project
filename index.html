@@ -16,13 +16,19 @@
         {{ message }}
     </div>
 
+    <hr>
+
     <div id="app2">
         <span v-bind:title="message">Hold ur mouse here.</span>
     </div>
 
+    <hr>
+
     <div id="app3">
         <span v-if="seen">Can u see me ?</span>
     </div>
+
+    <hr>
 
     <div id="app4">
         <!-- xxx in XXX  前面的 xxx 是下面模版里的“变量名”，后面的 XXX 是 JS 代码里的“变量名” -->
@@ -31,15 +37,21 @@
         </ul>
     </div>
 
+    <hr>
+
     <div id="app5">
         <p>{{ msg }}</p>
         <button v-on:click="reverseMsg">reverse this message</button>
     </div>
 
+    <hr>
+
     <div id="app6">
         <p>{{ msg }}</p>
         <input v-model="msg">
     </div>
+
+    <hr>
 
     <div id="app7">
         <ol>
@@ -50,6 +62,8 @@
             <conponent-name v-for="xxx in todoItemsXXX" v-bind:todo-x-x-x="xxx" v-bind:key="xxx.id"></conponent-name>
         </ol>
     </div>
+
+    <hr>
 
     <h1>This is a Todo-List Demo:&nbsp;</h1>
     <div id="todo-list-demo">
@@ -66,11 +80,15 @@
         </ul>
     </div>
 
+    <hr>
+
     <!-- 第一次体验神奇的 v-model -->
     <div id="model-demo">
         <input v-model="message" placeholder="edit me">
         <p>Message is: {{ message }}</p>
     </div>
+
+    <hr>
 
     <!-- 复选框绑定 model，注意 model 的数据类型不一样，取的值不一样 -->
     <div id='model-demo-2'>
@@ -88,6 +106,8 @@
         <span>is Checked: {{ isChecked }}</span>
     </div>
 
+    <hr>
+
     <!-- 手写一个单选框并绑定 model -->
     <div id="model-demo-radio">
         <input type="radio" id="JackMa" value="JackMa" v-model="selectedValue">
@@ -99,6 +119,8 @@
         <span>Selected: {{ selectedValue }}</span>
     </div>
 
+    <hr>
+
     <!-- 写一个单选的下拉列表并绑定 mdoel -->
     <div id="model-demo-single-select">
         <select name="selectName" id="selectId" v-model="selectedValue">
@@ -106,12 +128,14 @@
             <option value="valueForA">A</option>
             <!-- 不写 value 属性，就取默认的文本 -->
             <!-- 初始化默认选中，取自 data 中给 model 定义的默认值 -->
-            <option >B</option>
-            <option >C</option>
-            <option >666</option>
+            <option>B</option>
+            <option>C</option>
+            <option>666</option>
         </select>
         <span>Selected: {{ selectedValue }}</span>
     </div>
+
+    <hr>
 
     <!-- 写一个多选的下拉列表并绑定 mdoel -->
     <div id="model-demo-multiple-select">
@@ -120,12 +144,14 @@
             <option value="valueForA">A</option>
             <!-- 不写 value 属性，就取默认的文本 -->
             <!-- 初始化默认选中，取自 data 中给 model 定义的默认值 -->
-            <option >B</option>
-            <option >C</option>
-            <option >666</option>
+            <option>B</option>
+            <option>C</option>
+            <option>666</option>
         </select>
         <span>Selected: {{ selectedValue }}</span>
     </div>
+
+    <hr>
 
     <!-- 一个组件的 demo -->
     <div id="component-demo">
