@@ -56,28 +56,20 @@
         <form v-on:submit.prevent="addNewTodo">
             <!-- 把 input 写到 label 里面，可以不用写 label 的 for 和 input 的 id -->
             <label for="">add a new todo:
-                <input v-model="newTodoText"
-                       id="new-todo"
-                       placeholder="E.g. Feed the cat"
-                >
+                <input v-model="newTodoText" id="new-todo" placeholder="E.g. Feed the cat">
             </label>
             <button>Add</button>
         </form>
         <ul>
-            <li
-                is="todo-item"
-                v-for="(xxx, index) in XXX"
-                v-bind:key="xxx.id"
-                v-bind:title="xxx.title"
-                v-on:remove="removeTodoItem(index)"
-            ></li>
+            <li is="todo-item" v-for="(xxx, index) in XXX" v-bind:key="xxx.id" v-bind:title="xxx.title"
+                v-on:remove="removeTodoItem(index)"></li>
         </ul>
     </div>
 
     <!-- 第一次体验神奇的 v-model -->
     <div id="model-demo">
         <input v-model="message" placeholder="edit me">
-        <p>Message is: {{ message }}</p>    
+        <p>Message is: {{ message }}</p>
     </div>
 
     <!-- 复选框绑定 model，注意 model 的数据类型不一样，取的值不一样 -->
@@ -94,7 +86,18 @@
         <span>Checked names: {{ checkedValue }}</span>
         <br>
         <span>is Checked: {{ isChecked }}</span>
-      </div>
+    </div>
+
+    <!-- 手写一个单选框并绑定 model -->
+    <div id="model-demo-radio">
+        <input type="radio" id="JackMa" value="JackMa" v-model="selectedValue">
+        <label for="JackMa">I am label for JackMa.</label>
+        <br>
+        <input type="radio" id="PonyMa" value="PonyMaAsValue" v-model="selectedValue">
+        <label for="PonyMa">I am label for PonyMa.</label>
+        <br>
+        <span>Selected: {{ selectedValue }}</span>
+    </div>
 
 </body>
 <script src="./src/main.js"></script>

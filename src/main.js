@@ -130,3 +130,12 @@ let modelDemo2 = new Vue({
         isChecked: ''
     }
 });
+
+let modelDemoRadio = new Vue({
+    el: "#model-demo-radio",
+    data: {
+        // 这里默认值是 '' 或 [] ，取到的值都是 radio 的 value
+        // 但是按照文档，最好是写 ''，因为这是单选框
+        selectedValue: ''
+    }
+});
