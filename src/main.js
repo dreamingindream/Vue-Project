@@ -164,14 +164,23 @@ let componentDemo = new Vue({
 });
 
 Vue.component("news-list", {
-    props: ["title"],
+    props: ["news"],
     template: `
-        <h3>{{ title }}</h3>
+        <div>
+            <h3>{{ news.title }}</h3>
+            <p>{{ news.content }}</p>
+            <p>{{ news.bottom }}</p>
+        </div>
     `
 });
 let componentDemo2 = new Vue ({
     el: "#component-demo2",
     data: {
-        title: '666'
+        newsList: [
+            { id: 0, title: '1st News.', content: "there are news contents.", bottom: "this is the bottom of a news."},
+            { id: 1, title: '2nd News.', content: "there are news contents.", bottom: "this is the bottom of a news."},
+            { id: 2, title: '3rd News.', content: "there are news contents.", bottom: "this is the bottom of a news."},
+            { id: 3, title: '4th News.', content: "there are news contents.", bottom: "this is the bottom of a news."}
+        ]
     }
 });
