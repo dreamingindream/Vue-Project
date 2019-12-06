@@ -120,3 +120,13 @@ let modelDemo = new Vue({
         message: ""
     }
 });
+
+let modelDemo2 = new Vue({
+    el: "#model-demo-2",
+    data: {
+        // 如果默认值是 ''，那么实际存的是 checkbox 框是否被勾选 true/false
+        // 如果默认值是 []，那么实际存的是 checkbox 的 value
+        checkedValue: [],
+        isChecked: ''
+    }
+});

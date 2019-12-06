@@ -80,6 +80,19 @@
         <p>Message is: {{ message }}</p>    
     </div>
 
+    <!-- 复选框绑定 model，注意 model 的数据类型不一样，取的值不一样 -->
+    <div id='model-demo-2'>
+        <input type="checkbox" id="jack" value="JackAsValue" v-model="checkedValue">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="isChecked">
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedValue">
+        <label for="mike">Mike</label>
+        <br>
+        <span>Checked names: {{ checkedValue }}</span>
+        <span>is Checked: {{ isChecked }}</span>
+      </div>
+
 </body>
 <script src="./src/main.js"></script>
 
