@@ -112,4 +112,11 @@ let todoListVue = new Vue({
             this.XXX.splice(index, 1)
         }
     }
-})
+});
+
+let modelDemo = new Vue({
+    el: "#model-demo",
+    data: {
+        message: ""
+    }
+});
