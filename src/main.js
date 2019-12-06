@@ -162,3 +162,16 @@ let componentDemo = new Vue({
         
     }
 });
+
+Vue.component("news-list", {
+    props: ["title"],
+    template: `
+        <h3>{{ title }}</h3>
+    `
+});
+let componentDemo2 = new Vue ({
+    el: "#component-demo2",
+    data: {
+        title: '666'
+    }
+});
