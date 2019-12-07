@@ -2,173 +2,173 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <body>
 
-    <div id="app">
-        {{ message }}
-    </div>
+  <div id="app">
+    {{ message }}
+  </div>
 
-    <hr>
+  <hr>
 
-    <div id="app2">
-        <span v-bind:title="message">Hold ur mouse here.</span>
-    </div>
+  <div id="app2">
+    <span v-bind:title="message">Hold ur mouse here.</span>
+  </div>
 
-    <hr>
+  <hr>
 
-    <div id="app3">
-        <span v-if="seen">Can u see me ?</span>
-    </div>
+  <div id="app3">
+    <span v-if="seen">Can u see me ?</span>
+  </div>
 
-    <hr>
+  <hr>
 
-    <div id="app4">
-        <!-- xxx in XXX  前面的 xxx 是下面模版里的“变量名”，后面的 XXX 是 JS 代码里的“变量名” -->
-        <ul v-for="xxx in Todos">
-            <li>{{ xxx.text }}</li>
-        </ul>
-    </div>
+  <div id="app4">
+    <!-- xxx in XXX  前面的 xxx 是下面模版里的“变量名”，后面的 XXX 是 JS 代码里的“变量名” -->
+    <ul v-for="xxx in Todos">
+      <li>{{ xxx.text }}</li>
+    </ul>
+  </div>
 
-    <hr>
+  <hr>
 
-    <div id="app5">
-        <p>{{ msg }}</p>
-        <button v-on:click="reverseMsg">reverse this message</button>
-    </div>
+  <div id="app5">
+    <p>{{ msg }}</p>
+    <button v-on:click="reverseMsg">reverse this message</button>
+  </div>
 
-    <hr>
+  <hr>
 
-    <div id="app6">
-        <p>{{ msg }}</p>
-        <input v-model="msg">
-    </div>
+  <div id="app6">
+    <p>{{ msg }}</p>
+    <input v-model="msg">
+  </div>
 
-    <hr>
+  <hr>
 
-    <div id="app7">
-        <ol>
-            <!-- 自学文档遇到的第一个坑，同样通过文档找到答案： -->
-            <!-- 注意这里 Prop 的写法，在 JS 里 Prop 中写驼峰，HLML 里写 -小写 -->
-            <!-- 同时因为 Vue 这样的处理方式，使得 JS 里这种对 Prop 的命名不能用 -  -->
-            <!-- v-for 不受 HTML 大小写不敏感的影响，因为是在 JS 里执行的 -->
-            <conponent-name v-for="xxx in todoItemsXXX" v-bind:todo-x-x-x="xxx" v-bind:key="xxx.id"></conponent-name>
-        </ol>
-    </div>
+  <div id="app7">
+    <ol>
+      <!-- 自学文档遇到的第一个坑，同样通过文档找到答案： -->
+      <!-- 注意这里 Prop 的写法，在 JS 里 Prop 中写驼峰，HLML 里写 -小写 -->
+      <!-- 同时因为 Vue 这样的处理方式，使得 JS 里这种对 Prop 的命名不能用 -  -->
+      <!-- v-for 不受 HTML 大小写不敏感的影响，因为是在 JS 里执行的 -->
+      <conponent-name v-for="xxx in todoItemsXXX" v-bind:todo-x-x-x="xxx" v-bind:key="xxx.id"></conponent-name>
+    </ol>
+  </div>
 
-    <hr>
+  <hr>
 
-    <h1>This is a Todo-List Demo:&nbsp;</h1>
-    <div id="todo-list-demo">
-        <form v-on:submit.prevent="addNewTodo">
-            <!-- 把 input 写到 label 里面，可以不用写 label 的 for 和 input 的 id -->
-            <label for="">add a new todo:
-                <input v-model="newTodoText" id="new-todo" placeholder="E.g. Feed the cat">
-            </label>
-            <button>Add</button>
-        </form>
-        <ul>
-            <li is="todo-item" v-for="(xxx, index) in XXX" v-bind:key="xxx.id" v-bind:title="xxx.title"
-                v-on:remove="removeTodoItem(index)"></li>
-        </ul>
-    </div>
+  <h1>This is a Todo-List Demo:&nbsp;</h1>
+  <div id="todo-list-demo">
+    <form v-on:submit.prevent="addNewTodo">
+      <!-- 把 input 写到 label 里面，可以不用写 label 的 for 和 input 的 id -->
+      <label for="">add a new todo:
+        <input v-model="newTodoText" id="new-todo" placeholder="E.g. Feed the cat">
+      </label>
+      <button>Add</button>
+    </form>
+    <ul>
+      <li is="todo-item" v-for="(xxx, index) in XXX" v-bind:key="xxx.id" v-bind:title="xxx.title"
+        v-on:remove="removeTodoItem(index)"></li>
+    </ul>
+  </div>
 
-    <hr>
+  <hr>
 
-    <!-- 第一次体验神奇的 v-model -->
-    <div id="model-demo">
-        <input v-model="message" placeholder="edit me">
-        <p>Message is: {{ message }}</p>
-    </div>
+  <!-- 第一次体验神奇的 v-model -->
+  <div id="model-demo">
+    <input v-model="message" placeholder="edit me">
+    <p>Message is: {{ message }}</p>
+  </div>
 
-    <hr>
+  <hr>
 
-    <!-- 复选框绑定 model，注意 model 的数据类型不一样，取的值不一样 -->
-    <div id='model-demo-2'>
-        <input type="checkbox" id="jack" value="JackAsValue" v-model="checkedValue">
-        <label for="jack">Jack</label>
-        <input type="checkbox" id="john" value="John" v-model="isChecked">
-        <label for="john">John</label>
-        <input type="checkbox" id="mike" value="Mike" v-model="checkedValue">
-        <label for="mike">Mike</label>
-        <input type="checkbox" id="Jiawei" value="JiaweiAsValue" v-model="checkedValue">
-        <label for="Jiawei">I am a label for Jiawei.</label>
-        <br>
-        <span>Checked names: {{ checkedValue }}</span>
-        <br>
-        <span>is Checked: {{ isChecked }}</span>
-    </div>
+  <!-- 复选框绑定 model，注意 model 的数据类型不一样，取的值不一样 -->
+  <div id='model-demo-2'>
+    <input type="checkbox" id="jack" value="JackAsValue" v-model="checkedValue">
+    <label for="jack">Jack</label>
+    <input type="checkbox" id="john" value="John" v-model="isChecked">
+    <label for="john">John</label>
+    <input type="checkbox" id="mike" value="Mike" v-model="checkedValue">
+    <label for="mike">Mike</label>
+    <input type="checkbox" id="Jiawei" value="JiaweiAsValue" v-model="checkedValue">
+    <label for="Jiawei">I am a label for Jiawei.</label>
+    <br>
+    <span>Checked names: {{ checkedValue }}</span>
+    <br>
+    <span>is Checked: {{ isChecked }}</span>
+  </div>
 
-    <hr>
+  <hr>
 
-    <!-- 手写一个单选框并绑定 model -->
-    <div id="model-demo-radio">
-        <input type="radio" id="JackMa" value="JackMa" v-model="selectedValue">
-        <label for="JackMa">I am label for JackMa.</label>
-        <br>
-        <input type="radio" id="PonyMa" value="PonyMaAsValue" v-model="selectedValue">
-        <label for="PonyMa">I am label for PonyMa.</label>
-        <br>
-        <span>Selected: {{ selectedValue }}</span>
-    </div>
+  <!-- 手写一个单选框并绑定 model -->
+  <div id="model-demo-radio">
+    <input type="radio" id="JackMa" value="JackMa" v-model="selectedValue">
+    <label for="JackMa">I am label for JackMa.</label>
+    <br>
+    <input type="radio" id="PonyMa" value="PonyMaAsValue" v-model="selectedValue">
+    <label for="PonyMa">I am label for PonyMa.</label>
+    <br>
+    <span>Selected: {{ selectedValue }}</span>
+  </div>
 
-    <hr>
+  <hr>
 
-    <!-- 写一个单选的下拉列表并绑定 mdoel -->
-    <div id="model-demo-single-select">
-        <select name="selectName" id="selectId" v-model="selectedValue">
-            <option value="noValue" disabled>Please Chose One:</option>
-            <option value="valueForA">A</option>
-            <!-- 不写 value 属性，就取默认的文本 -->
-            <!-- 初始化默认选中，取自 data 中给 model 定义的默认值 -->
-            <option>B</option>
-            <option>C</option>
-            <option>666</option>
-        </select>
-        <span>Selected: {{ selectedValue }}</span>
-    </div>
+  <!-- 写一个单选的下拉列表并绑定 mdoel -->
+  <div id="model-demo-single-select">
+    <select name="selectName" id="selectId" v-model="selectedValue">
+      <option value="noValue" disabled>Please Chose One:</option>
+      <option value="valueForA">A</option>
+      <!-- 不写 value 属性，就取默认的文本 -->
+      <!-- 初始化默认选中，取自 data 中给 model 定义的默认值 -->
+      <option>B</option>
+      <option>C</option>
+      <option>666</option>
+    </select>
+    <span>Selected: {{ selectedValue }}</span>
+  </div>
 
-    <hr>
+  <hr>
 
-    <!-- 写一个多选的下拉列表并绑定 mdoel -->
-    <div id="model-demo-multiple-select">
-        <select name="selectName" id="selectId" multiple v-model="selectedValue">
-            <option value="noValue" disabled>Please Chose One:</option>
-            <option value="valueForA">A</option>
-            <!-- 不写 value 属性，就取默认的文本 -->
-            <!-- 初始化默认选中，取自 data 中给 model 定义的默认值 -->
-            <option>B</option>
-            <option>C</option>
-            <option>666</option>
-        </select>
-        <span>Selected: {{ selectedValue }}</span>
-    </div>
+  <!-- 写一个多选的下拉列表并绑定 mdoel -->
+  <div id="model-demo-multiple-select">
+    <select name="selectName" id="selectId" multiple v-model="selectedValue">
+      <option value="noValue" disabled>Please Chose One:</option>
+      <option value="valueForA">A</option>
+      <!-- 不写 value 属性，就取默认的文本 -->
+      <!-- 初始化默认选中，取自 data 中给 model 定义的默认值 -->
+      <option>B</option>
+      <option>C</option>
+      <option>666</option>
+    </select>
+    <span>Selected: {{ selectedValue }}</span>
+  </div>
 
-    <hr>
+  <hr>
 
-    <!-- 一个组件的 demo -->
-    <div id="component-demo">
-        <button-click-count></button-click-count>
-        <button-click-count></button-click-count>
-        <button-click-count></button-click-count>
-    </div>
+  <!-- 一个组件的 demo -->
+  <div id="component-demo">
+    <button-click-count></button-click-count>
+    <button-click-count></button-click-count>
+    <button-click-count></button-click-count>
+  </div>
 
-    <!-- 通过 props 向组件传数据 -->
-    <!-- 通过 v-for 来向组件循环插入 data 中的数据 -->
-    <!-- 通过 v-bind 绑定数据对象，来简化代码，不用每变更一个数据的 key 就重写一次 v-bind  -->
-    <div id="component-demo2">
-        <news-list v-for="news in newsList"
-                   v-bind:key="news.id"
-                   v-bind:x="news"
-        ></news-list>
-    </div>
+  <!-- 通过 props 向组件传数据 -->
+  <!-- 通过 v-for 来向组件循环插入 data 中的数据 -->
+  <!-- 通过 v-bind 绑定数据对象，来简化代码，不用每变更一个数据的 key 就重写一次 v-bind  -->
+  <div id="component-demo2">
+    <news-list v-for="news in newsList" 
+               v-bind:key="news.id" 
+               v-bind:x="news"
+    ></news-list>
+  </div>
 </body>
 <script src="./src/main.js"></script>
 
