@@ -181,6 +181,7 @@ let componentDemo2 = new Vue({
       { id: 1, title: '2nd News.', content: "there are news contents.", bottom: "this is the bottom of a news." },
       { id: 2, title: '3rd News.', content: "there are news contents.", bottom: "this is the bottom of a news." },
       { id: 3, title: '4th News.', content: "there are news contents.", bottom: "this is the bottom of a news." }
-    ]
+    ],
+    setFontSize: 1
   }
 });
