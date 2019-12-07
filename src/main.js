@@ -170,6 +170,8 @@ Vue.component("news-list", {
             <h3>{{ x.title }}</h3>
             <p>{{ x.content }}</p>
             <p>{{ x.bottom }}</p>
+            <!-- 注意这里面 emit 出去的名字要加分号，而且不要写驼峰，因为渲染 HTML 的时候不区分大小写 -->
+            <button @click="$emit('emit-name')"> larger fontSize</button>
         </div>
     `
 });
