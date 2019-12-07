@@ -171,7 +171,8 @@ Vue.component("news-list", {
             <p>{{ x.content }}</p>
             <p>{{ x.bottom }}</p>
             <!-- 注意这里面 emit 出去的名字要加分号，而且不要写驼峰，因为渲染 HTML 的时候不区分大小写 -->
-            <button @click="$emit('emit-name')"> larger fontSize</button>
+            <button @click="$emit('emit-name', {compute: 'add', size: 0.1})"> larger fontSize by 0.1</button>
+            <button @click="$emit('emit-name', {compute: 'minus', size: 0.1})"> smaller fontSize by 0.1</button>
         </div>
     `
 });
@@ -185,5 +186,14 @@ let componentDemo2 = new Vue({
       { id: 3, title: '4th News.', content: "there are news contents.", bottom: "this is the bottom of a news." }
     ],
     setFontSize: 1
+  },
+  methods: {
+    largerFontSize: function (obj) { // 不能用箭头函数，因为要用到 this
+      if ("add" === obj.compute) {
+        this.setFontSize += obj.size;
+      } else if ("minus" === obj.compute){
+        this.setFontSize -= obj.size;
+      }
+    }
   }
 });
