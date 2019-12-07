@@ -159,7 +159,7 @@ Vue.component("button-click-count", {
 let componentDemo = new Vue({
     el: "#component-demo",
     data: {
-        
+
     }
 });
 
@@ -173,14 +173,14 @@ Vue.component("news-list", {
         </div>
     `
 });
-let componentDemo2 = new Vue ({
+let componentDemo2 = new Vue({
     el: "#component-demo2",
     data: {
         newsList: [
-            { id: 0, title: '1st News.', content: "there are news contents.", bottom: "this is the bottom of a news."},
-            { id: 1, title: '2nd News.', content: "there are news contents.", bottom: "this is the bottom of a news."},
-            { id: 2, title: '3rd News.', content: "there are news contents.", bottom: "this is the bottom of a news."},
-            { id: 3, title: '4th News.', content: "there are news contents.", bottom: "this is the bottom of a news."}
+            { id: 0, title: '1st News.', content: "there are news contents.", bottom: "this is the bottom of a news." },
+            { id: 1, title: '2nd News.', content: "there are news contents.", bottom: "this is the bottom of a news." },
+            { id: 2, title: '3rd News.', content: "there are news contents.", bottom: "this is the bottom of a news." },
+            { id: 3, title: '4th News.', content: "there are news contents.", bottom: "this is the bottom of a news." }
         ]
     }
 });

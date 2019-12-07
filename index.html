@@ -164,9 +164,9 @@
     <!-- 通过 v-for 来向组件循环插入 data 中的数据 -->
     <!-- 通过 v-bind 绑定数据对象，来简化代码，不用每变更一个数据的 key 就重写一次 v-bind  -->
     <div id="component-demo2">
-        <news-list v-for="xxx in newsList"
-                   v-bind:key="xxx.id"
-                   v-bind:x="xxx"
+        <news-list v-for="news in newsList"
+                   v-bind:key="news.id"
+                   v-bind:x="news"
         ></news-list>
     </div>
 </body>
