@@ -165,7 +165,17 @@ let componentDemo = new Vue({
 
 Vue.component("news-list", {
   props: {
-    x: Object
+    x: {
+      tyoe: Object,
+      // required: true, // 当这里配置了 true 时，如果没有给组件传值，会报错，即此时无法用默认值
+      default: function () {
+        return {
+          title: "default title",
+          contnet: "default content",
+          bottom: "default botom"
+        }
+      }
+    }
   },
   template: `
         <div>
