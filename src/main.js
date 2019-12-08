@@ -215,7 +215,7 @@ let slotDemoComponent = {
   template: `
     <div>
       <a href="https://vuejs.org">Vue.js</a>
-      <slot></slot>
+      <slot>default content for a slot</slot>
     </div>
   `
 } 
