@@ -164,6 +164,7 @@ let componentDemo = new Vue({
 });
 
 Vue.component("news-list", {
+  inheritAttrs: false, // 不继承父级元素上当特性，写组件时常用
   props: {
     x: {
       tyoe: Object,
