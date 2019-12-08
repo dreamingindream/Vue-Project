@@ -210,3 +210,18 @@ let componentDemo2 = new Vue({
     }
   }
 });
+
+let slotDemoComponent = {
+  template: `
+    <div>
+      <a href="https://vuejs.org">Vue.js</a>
+      <slot></slot>
+    </div>
+  `
+} 
+let slotDemo = new Vue({
+  el: "#slot-demo",
+  components: {
+    "slot-demo-component": slotDemoComponent 
+  }
+});
