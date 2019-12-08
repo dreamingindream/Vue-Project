@@ -164,7 +164,9 @@ let componentDemo = new Vue({
 });
 
 Vue.component("news-list", {
-  props: ["x"],
+  props: {
+    x: Object
+  },
   template: `
         <div>
             <h3>{{ x.title }}</h3>
