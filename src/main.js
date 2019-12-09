@@ -172,7 +172,7 @@ Vue.component("news-list", {
       default: function () {
         return {
           title: "default title",
-          contnet: "default content",
+          content: "default content",
           bottom: "default botom"
         }
       }
