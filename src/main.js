@@ -302,7 +302,7 @@ let xxoo = new Vue({
         this.result = this.valueMap[1][1];
       }
 
-      if (null !== this.result) this.result += "赢了！";
+      if (null !== this.result && "" !== this.result) this.result += "赢了！";
     }
   }
 });
