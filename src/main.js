@@ -228,26 +228,31 @@ let slotDemo = new Vue({
 
 let xxooUnit = {
   template: `
-    <div class="unit" @click="clickUnit">
+    <div class="unit" @click="$emit('click-unit')">
       {{ value }}
     </div>
   `,
-  data() {
-    return {
-      value: "空",
-      count: 0
+  computed: {
+    value: function () {
+      return this.count % 2 ? "X" : "O";
     }
   },
-  methods: {
-    clickUnit: function () {
-      console.log(this.value);
-      this.value = ++this.count
-    }
-  }
+  props: ["count"]
 }
 let xxoo = new Vue({
   el: "#xxoo",
   components: {
     "xxoo-unit": xxooUnit
+  },
+  data() {
+    return {
+      count: 0
+    }
+  },
+  methods: {
+    clickUnit: function () {
+      console.log('jinglaile')
+      this.count++;
+    }
   }
 });
