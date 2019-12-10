@@ -189,17 +189,36 @@
 
   <!-- 一个 #字棋小游戏的 demo -->
   <div id="xxoo">
-    <xxoo-unit :count="count" @click-unit="clickUnit"></xxoo-unit>
-    <xxoo-unit :count="count" @click-unit="clickUnit"></xxoo-unit>
-    <xxoo-unit :count="count" @click-unit="clickUnit"></xxoo-unit>
+    <p v-if="result"> {{ result }} </p>
+    <div class="line">
+        <xxoo-unit :count="count" @click-unit="clickUnit($event, 0)"></xxoo-unit>
+        <xxoo-unit :count="count" @click-unit="clickUnit($event, 1)"></xxoo-unit>
+        <xxoo-unit :count="count" @click-unit="clickUnit($event, 2)"></xxoo-unit>          
+    </div>
+    <div class="line">
+        <xxoo-unit :count="count" @click-unit="clickUnit($event, 3)"></xxoo-unit>
+        <xxoo-unit :count="count" @click-unit="clickUnit($event, 4)"></xxoo-unit>
+        <xxoo-unit :count="count" @click-unit="clickUnit($event, 5)"></xxoo-unit>          
+    </div>
+    <div class="line">
+        <xxoo-unit :count="count" @click-unit="clickUnit($event, 6)"></xxoo-unit>
+        <xxoo-unit :count="count" @click-unit="clickUnit($event, 7)"></xxoo-unit>
+        <xxoo-unit :count="count" @click-unit="clickUnit($event, 8)"></xxoo-unit>          
+    </div>
   </div>
 
 </body> 
 <script src="./src/main.js"></script>
 
 <style>
-  body {
+  * {
     font-size: 1em;
+    margin: 0;
+    padding: 0;
+  }
+
+  .line {
+    display: flex;
   }
 
   .unit {

@@ -226,18 +226,29 @@ let slotDemo = new Vue({
   }
 });
 
+// 以下是 #字棋小游戏的代码
 let xxooUnit = {
   template: `
-    <div class="unit" @click="$emit('click-unit')">
-      {{ value }}
+    <div class="unit" @click="clickUnit">
+      <template v-if="clicked"> {{ value }} </template>
+      <template v-else></template>
     </div>
   `,
-  computed: {
-    value: function () {
-      return this.count % 2 ? "X" : "O";
+  data() {
+    return {
+      clicked: false,
+      value: ""
     }
   },
-  props: ["count"]
+  props: ["count"],
+  methods: {
+    clickUnit: function () {
+      if (this.clicked) return;
+      this.clicked = true;
+      this.value = 0 === this.count ? "x" : "O";
+      this.$emit('click-unit', this.value);
+    }
+  }
 }
 let xxoo = new Vue({
   el: "#xxoo",
@@ -246,13 +257,52 @@ let xxoo = new Vue({
   },
   data() {
     return {
-      count: 0
+      count: 0,
+      valueMap: [
+        [null, null, null],
+        [null, null, null],
+        [null, null, null]
+      ],
+      result: ""
     }
   },
   methods: {
-    clickUnit: function () {
-      console.log('jinglaile')
-      this.count++;
+    clickUnit(value, id) {
+      0 === this.count ? this.count = 1 : this.count = 0;
+      console.log(value, id);
+      this.valueMap[Math.floor(id / 3)][id % 3] = value;
+      this.tell();
+    },
+    tell() {
+      for (let i = 0; i < 3; i++) {
+        if (
+          null !== this.valueMap[i][0] &&
+          this.valueMap[i][0] === this.valueMap[i][1] &&
+          this.valueMap[i][1] === this.valueMap[i][2]
+        ) {
+          this.result = this.valueMap[i][0];
+        }
+      }
+      for (let i = 0; i < 3; i++) {
+        if (
+          null !== this.valueMap[0][i] &&
+          this.valueMap[0][i] === this.valueMap[1][i] &&
+          this.valueMap[1][i] === this.valueMap[2][i]
+        ) {
+          this.result = this.valueMap[0][i];
+        }
+      }
+      if (
+        null !== this.valueMap[1][1] &&
+        (this.valueMap[0][0] === this.valueMap[1][1] &&
+          this.valueMap[1][1] === this.valueMap[2][2]) ||
+        (this.valueMap[0][2] === this.valueMap[1][1] &&
+          this.valueMap[1][1] === this.valueMap[2][0])
+      ) {
+        this.result = this.valueMap[1][1];
+      }
+
+      if (null !== this.result) this.result += "赢了！";
     }
   }
 });
