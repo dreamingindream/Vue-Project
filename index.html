@@ -160,6 +160,8 @@
     <button-click-count></button-click-count>
   </div>
 
+  <hr>
+
   <!-- 通过 props 向组件传数据 -->
   <!-- 通过 v-for 来向组件循环插入 data 中的数据 -->
   <!-- 通过 v-bind 绑定数据对象，来简化代码，不用每变更一个数据的 key 就重写一次 v-bind  -->
@@ -175,10 +177,21 @@
     ></news-list>
   </div>
 
+  <hr>
+
   <!-- 一个插槽的 demo -->
   <div id="slot-demo">
     <!-- 初步认识：slot 把你写在 HTML 里的东西，传入模版里面，这样就能正常展示你在 HTML 里写的东西 -->
     <slot-demo-component>this is what a "slot" slot， no &lt;slot&gt;&lt;/slot&gt; , no me.</slot-demo-component>
+  </div>
+
+  <hr>
+
+  <!-- 一个 #字棋小游戏的 demo -->
+  <div id="xxoo">
+    <xxoo-unit></xxoo-unit>
+    <xxoo-unit></xxoo-unit>
+    <xxoo-unit></xxoo-unit>
   </div>
 
 </body> 
@@ -187,6 +200,16 @@
 <style>
   body {
     font-size: 1em;
+  }
+
+  .unit {
+    border: 1px solid black;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    line-height: 100px;
+    text-align: center;
   }
 </style>
 

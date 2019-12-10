@@ -167,7 +167,7 @@ Vue.component("news-list", {
   inheritAttrs: false, // 不继承父级元素上当特性，写组件时常用
   props: {
     x: {
-      tyoe: Object,
+      type: Object,
       // required: true, // 当这里配置了 true 时，如果没有给组件传值，会报错，即此时无法用默认值
       default: function () {
         return {
@@ -204,7 +204,7 @@ let componentDemo2 = new Vue({
     largerFontSize: function (obj) { // 不能用箭头函数，因为要用到 this
       if ("add" === obj.compute) {
         this.setFontSize += obj.size;
-      } else if ("minus" === obj.compute){
+      } else if ("minus" === obj.compute) {
         this.setFontSize -= obj.size;
       }
     }
@@ -218,10 +218,36 @@ let slotDemoComponent = {
       <slot>default content for a slot</slot>
     </div>
   `
-} 
+}
 let slotDemo = new Vue({
   el: "#slot-demo",
   components: {
-    "slot-demo-component": slotDemoComponent 
+    "slot-demo-component": slotDemoComponent
+  }
+});
+
+let xxooUnit = {
+  template: `
+    <div class="unit" @click="clickUnit">
+      {{ value }}
+    </div>
+  `,
+  data() {
+    return {
+      value: "空",
+      count: 0
+    }
+  },
+  methods: {
+    clickUnit: function () {
+      console.log(this.value);
+      this.value = ++this.count
+    }
+  }
+}
+let xxoo = new Vue({
+  el: "#xxoo",
+  components: {
+    "xxoo-unit": xxooUnit
   }
 });
