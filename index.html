@@ -188,8 +188,8 @@
   <hr>
 
   <!-- 一个 #字棋小游戏的 demo -->
-  <div id="xxoo">
-    <p v-if="result"> {{ result }} </p>
+  <div id="xxoo" class="center">
+    <p v-if="result" style="text-align: center;"> {{ result }} </p>
     <div class="line">
         <xxoo-unit :count="count" @click-unit="clickUnit($event, 0)"></xxoo-unit>
         <xxoo-unit :count="count" @click-unit="clickUnit($event, 1)"></xxoo-unit>
@@ -219,6 +219,7 @@
 
   .line {
     display: flex;
+    justify-content: center;
   }
 
   .unit {
