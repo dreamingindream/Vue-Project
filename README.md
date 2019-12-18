@@ -41,6 +41,11 @@ v-cloak：？？？
 
 组件开发必备：高级特性之 provide/inject，跨组件通信
 
+获取当前组件实例：`$vm.refs.xxx`  `<p ref='p'></p>`
+跨组件获取组件实例：
+递归方式一个层级一个层级的找（代码繁琐、访问低效）
+主动通知、主动获取？？？ `callback ref` `v-ant-ref`
+
 ---
 
 in Terminal, input 'vim README.md' to open this file in Vim
