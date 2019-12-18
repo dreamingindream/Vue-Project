@@ -46,6 +46,22 @@ v-cloak：？？？
 递归方式一个层级一个层级的找（代码繁琐、访问低效）
 主动通知、主动获取？？？ `callback ref` `v-ant-ref`
 
+Template V.S. JSX
+
+Template：
+* 模版语法，HTML 的拓展
+* 数据绑定使用 Mustache 语法，即双大括号
+* 学习成本低，官方给你各种成熟的工具直接用，灵活性低
+
+JSX：
+* Javascript 的语法拓展
+* 数据绑定使用单大括号
+* 灵活，灵活，灵活
+
+二者可以混合使用，只要你够牛逼，语言（语法）从来不是障碍。
+
+本质：都是语法糖，最终都是编译成了 document.createElement
+
 ---
 
 in Terminal, input 'vim README.md' to open this file in Vim
