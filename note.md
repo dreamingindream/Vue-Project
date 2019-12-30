@@ -65,3 +65,39 @@ JSX：
 # Vuex：一种状态管理模式
 
 通过属性层层传递、通过 provide/inject，之外的第三种管理模式
+
+说白了就是个工具，照着 demo 直接干就完了，干完再说
+
+```JavaScript
+import Vuex from 'Vuex'
+
+Vue.use(Vuex);
+
+let store = new Vuex.Store({
+  state: {
+    data1: 0
+  },
+  mutations: {
+    add(state) {
+      state.data1++;
+    }
+  },
+  actions: { // do async things
+    remoteAdd(commit) {
+      setTimeout((commit)=>{
+        commit('add'); // actions 不要直接操作 state，注意规范
+      }, 3000);
+    }
+  }
+});
+```
+```
+<template>
+  <!-- this.$store.state.count -->
+  {{ count }}
+  <br />>
+  {{ $store.state.count }}
+  <button @click="$store.commit('add')"></button>
+  <button @click="$store.dispatch('remoteAdd')"></button>
+</template>
+```
