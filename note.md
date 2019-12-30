@@ -101,3 +101,17 @@ let store = new Vuex.Store({
   <button @click="$store.dispatch('remoteAdd')"></button>
 </template>
 ```
+
+## 核心概念
+
+### state - this.$store.state.xxx 提供响应式数据
+
+### getters - this.$store.getters.xxx 通过计算属性的方式获取数据
+
+### mutations - this.$store.commit('xxx') 更改 state 的方法
+
+### actions - this.$store.dispatch('xxx') 异步触发 mutations 的方法
+
+### module 
+
+### 核心概念的源码实现原理：
