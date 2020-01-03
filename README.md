@@ -24,3 +24,18 @@ git add .
 git commit -m 'git init'
 git push ...
 ```
+Vue 造轮子起步：
+readme: 使用本框架前，请在 CSS 中开启 border-box
+```CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```
+做一个初步的最基础的 button 
+两个知识点：CSS 变量让用户可以自己设置组件的样式；Vue 组件的写法
+
+构建工具的选择：parcel 不够用之后再转为 webpack
+
+npm install -D xxx  (-D: developer，开发者使用)
