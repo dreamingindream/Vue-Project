@@ -40,6 +40,7 @@ readme: 使用本框架前，请在 CSS 中开启 border-box
 
 npm install -D xxx  (-D: developer，开发者使用)
 
+npx parcel // npm 在当前目录自己去找 parcel 并执行，不用自己写 parcel 所在的路径
 parcel --no-cache  // 不使用缓存，否则改动的东西有可能并没有被 parcel
 
 npm install -g git-open
