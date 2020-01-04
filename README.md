@@ -39,3 +39,8 @@ readme: 使用本框架前，请在 CSS 中开启 border-box
 构建工具的选择：parcel 不够用之后再转为 webpack
 
 npm install -D xxx  (-D: developer，开发者使用)
+
+parcel --no-cache  // 不使用缓存，否则改动的东西有可能并没有被 parcel
+
+npm install -g git-open
+在任何一个 git 目录下打开命令行，输入 git open 就可以直接打开 github 对应的页面
