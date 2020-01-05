@@ -133,3 +133,7 @@ Hash 模式：丑，无法使用锚点定位
 History 模式：需要后端配合，IE 9 不兼容（可以使用强制刷新处理）
 
 ## Nuxt 是个啥？？？
+
+## UI 组件库的对比
+
+Element UI、Ant Design、iView，数量、单元测试、admin（谁维护）、背景、原型（设计）Axure、Sketch 支持
