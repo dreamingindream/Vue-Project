@@ -137,3 +137,13 @@ History 模式：需要后端配合，IE 9 不兼容（可以使用强制刷新�
 ## UI 组件库的对比
 
 Element UI、Ant Design、iView，数量、单元测试、admin（谁维护）、背景、原型（设计）Axure、Sketch 支持
+
+## 开发工具推荐
+
+Vetur：语法高亮、语法补全、Lint 检查、格式化（针对 Vue）
+
+ESLint：代码规范检查、错误检查
+
+Prettier：格式美化
+
+Vue Devtools：Vue 调试
